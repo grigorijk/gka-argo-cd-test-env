@@ -1,0 +1,9 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: shipping-service
+spec:
+  path: "/shipping" 
+  to:
+    kind: Service
+    name: shipping-service
