@@ -7,7 +7,7 @@ bases:
 
 
 components:
-  - ../components/pipline-storage/pipeline-pvc.yaml
+  - ../../components/pipeline-storage
 
 patchesStrategicMerge:
   - deployment-patch.yaml
