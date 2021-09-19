@@ -10,6 +10,8 @@ spec:
         url: default.svc
       - cluster: shipping-service-pr-1
         url: default.svc
+      - cluster: product-service
+        url: default.svc
   template:
     metadata:
       name: module-{{cluster}}-set
