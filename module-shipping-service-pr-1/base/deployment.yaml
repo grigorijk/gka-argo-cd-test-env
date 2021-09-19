@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: shipping-service
+  name: shipping-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+        app: shipping-service
+  template:
+    metadata:
+      labels:
+        app: shipping-service
+    spec:
+      containers:
+      - image: hashicorp/http-echo
+        name: shipping-service
+        args: ["-listen=:8080", "-text='dev environment'"]
+        ports:
+        - name: app-port
+          containerPort: 8080
