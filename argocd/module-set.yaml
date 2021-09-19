@@ -7,7 +7,7 @@ spec:
   - list:
       elements:
       - cluster: shipping-service
-        uri: default.svc
+        url: default.svc
   template:
     metadata:
       name: module-{{cluster-name}}
