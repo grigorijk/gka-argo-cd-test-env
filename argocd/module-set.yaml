@@ -1,0 +1,33 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: module-application-set
+spec:
+  generators:
+  - list:
+      elements:
+      - module-name: shipping-service
+        url: https://1.2.3.4
+      - cluster: engineering-prod
+        url: https://2.4.6.8
+      - cluster: finance-preprod
+        url: https://9.8.7.6
+  template:
+    metadata:
+      name: module-{{module-name}}
+      namespace: openshift-gitops
+    spec:
+      destination:
+        namespace: module-{{module-name}}
+        server: https://kubernetes.default.svc
+      project: default
+      source:
+        path: module-{{module-name}}/overlay/test
+        repoURL: https://github.com/grigorijk/gka-argo-cd-test-env
+        targetRevision: master
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+        - CreateNamespace=true
