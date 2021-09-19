@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: shipping-service/overlay/test
+    path: module-shipping-service/overlay/test
     repoURL: https://github.com/grigorijk/gka-argo-cd-test-env
     targetRevision: master
   syncPolicy:
