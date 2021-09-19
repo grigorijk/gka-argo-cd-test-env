@@ -10,15 +10,15 @@ spec:
         url: default.svc
   template:
     metadata:
-      name: module-{{cluster-name}}-set
+      name: module-{{cluster}}-set
       namespace: openshift-gitops
     spec:
       destination:
-        namespace: module-{{cluster-name}}-set
+        namespace: module-{{cluster}}-set
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: module-{{cluster-name}}/overlay/test
+        path: module-{{cluster}}/overlay/test
         repoURL: https://github.com/grigorijk/gka-argo-cd-test-env
         targetRevision: master
       syncPolicy:
