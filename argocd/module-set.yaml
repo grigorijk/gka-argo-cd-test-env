@@ -7,11 +7,6 @@ spec:
   - list:
       elements:
       - module-name: shipping-service
-        url: https://1.2.3.4
-      - cluster: engineering-prod
-        url: https://2.4.6.8
-      - cluster: finance-preprod
-        url: https://9.8.7.6
   template:
     metadata:
       name: module-{{module-name}}
