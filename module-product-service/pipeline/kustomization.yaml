@@ -1,0 +1,4 @@
+resources:
+- build-tekton.yaml
+- pipeline-pvc.yaml
+  
