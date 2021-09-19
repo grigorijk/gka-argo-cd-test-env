@@ -6,18 +6,19 @@ spec:
   generators:
   - list:
       elements:
-      - module-name: shipping-service
+      - cluster: shipping-service
+        uri: default.svc
   template:
     metadata:
-      name: module-{{module-name}}
+      name: module-{{cluster-name}}
       namespace: openshift-gitops
     spec:
       destination:
-        namespace: module-{{module-name}}
+        namespace: module-{{cluster-name}}
         server: https://kubernetes.default.svc
       project: default
       source:
-        path: module-{{module-name}}/overlay/test
+        path: module-{{cluster-name}}/overlay/test
         repoURL: https://github.com/grigorijk/gka-argo-cd-test-env
         targetRevision: master
       syncPolicy:
