@@ -10,11 +10,11 @@ spec:
         url: default.svc
   template:
     metadata:
-      name: module-{{cluster-name}}
+      name: module-{{cluster-name}}-set
       namespace: openshift-gitops
     spec:
       destination:
-        namespace: module-{{cluster-name}}
+        namespace: module-{{cluster-name}}-set
         server: https://kubernetes.default.svc
       project: default
       source:
