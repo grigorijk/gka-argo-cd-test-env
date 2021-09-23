@@ -5,4 +5,4 @@ metadata:
     app: shipping-service
   name: shipping-service
 spec:
-  replicas: 2
+  replicas: 12
